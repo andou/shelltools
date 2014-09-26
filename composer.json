@@ -1,0 +1,25 @@
+{
+  "name": "andou/shelltools",
+  "description": "",
+  "license": "Mit License",
+  "authors": [
+    {
+      "name": "Antonio Pastorino",
+      "email": "antonio.pastorino@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/andou/shelltools/issues"
+  },
+  "require": {
+    "php": ">=5.3.0"
+  },
+  "autoload": {
+    "classmap": [
+      "src/"
+    ]
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
