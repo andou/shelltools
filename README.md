@@ -30,16 +30,14 @@ You can use `andou/shelltools` in your project this way
 #!/usr/bin/php
 <?php
 require_once './vendor/autoload.php';
-define('ISCLI', PHP_SAPI === 'cli');
-if (ISCLI === true):
-  $shell = Andou\Shelltools\Shell::getInstance();
+$shell = Andou\Shelltools\Shell::getInstance();
+if ($shell->isCli()):
   $shell->getOptions();
   $shell->getFlags();
 
   for ($index = 0; $index < 1000; $index++) {
     $shell->spinnerStep();
   }
-
 else:
   echo "ERROR: this script is callable only from PHPCLI environment.\n";
   exit(1);
