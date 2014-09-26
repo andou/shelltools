@@ -24,7 +24,12 @@ Here is a minimal example of a `composer.json` file that just defines a dependen
 ```    
 
 ## Usage Examples
-You can use `andou/shelltools` in your project this way
+You can use `andou/shelltools` in your project this way. 
+Dont forget to chmod +x your script
+```shell
+$ chmod +x script.php
+$ ./script.php -f --option_name=option_value
+```
 
 ```php
 #!/usr/bin/php
