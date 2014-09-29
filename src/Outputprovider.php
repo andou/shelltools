@@ -50,4 +50,18 @@ interface Outputprovider {
    * @return \Andou\Outputprovider
    */
   public function ol($msg);
+
+  /**
+   * Sets the output background color
+   * 
+   * @param \Andou\Shelltools\Shellcolor $color
+   */
+  public function setBgColor(\Andou\Shelltools\Shellcolor $color);
+
+  /**
+   * Sets the output foreground color
+   * 
+   * @param \Andou\Shelltools\Shellcolor $color
+   */
+  public function setFgColor(\Andou\Shelltools\Shellcolor $color);
 }

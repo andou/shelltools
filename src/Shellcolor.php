@@ -79,6 +79,10 @@ class Shellcolor {
     return $this->_color;
   }
 
+  public function __toString() {
+    return $this->_color;
+  }
+
   /**
    * Generates a colored string to be printed
    * 
