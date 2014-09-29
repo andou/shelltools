@@ -33,7 +33,7 @@ namespace Andou\Shelltools;
  * @package andou/shelltools
  * @copyright MIT License (http://opensource.org/licenses/MIT)
  */
-class Shell {
+class Shell implements \Andou\Shelltools\Outputprovider {
 
   /**
    * Script arguments
@@ -78,6 +78,20 @@ class Shell {
    * @var type 
    */
   protected $_spinner_count = 0;
+
+  /**
+   * Foreground color schema for output
+   *
+   * @var \Andou\Shelltools\Shellcolor
+   */
+  protected $_fg_color = NULL;
+
+  /**
+   * Background color schema for output
+   *
+   * @var \Andou\Shelltools\Shellcolor
+   */
+  protected $_bg_color = NULL;
 
   /**
    * Returns an instance of this class
@@ -230,6 +244,56 @@ class Shell {
    */
   public function getScriptName() {
     return $this->_script_name;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
+  //////////////////////////////  OUTPUT  //////////////////////////////////////
+  //////////////////////////////////////////////////////////////////////////////
+
+  /**
+   * Outputs a message in stdout
+   * 
+   * @param type $message
+   * @return \Andou\Shelltools\Shell
+   */
+  public function o($msg) {
+    echo Shellcolor::getColoredString($msg, $this->_fg_color, $this->_bg_color);
+  }
+
+  /**
+   * Outputs a message in stdout
+   * 
+   * @param type $message
+   * @return \Andou\Shelltools\Shell
+   */
+  public function ol($msg) {
+    echo Shellcolor::getColoredString($msg, $this->_fg_color, $this->_bg_color) . "\n";
+  }
+
+  /**
+   * Sets the fg color
+   * 
+   * @param \Andou\Shelltools\Shellcolor $color
+   */
+  public function setFgColor(\Andou\Shelltools\Shellcolor $color) {
+    $this->_fg_color = $color;
+    return $this;
+  }
+
+  /**
+   * Sets the bg color
+   * 
+   * @param \Andou\Shelltools\Shellcolor $color
+   */
+  public function setBgColor(\Andou\Shelltools\Shellcolor $color) {
+    $this->_bg_color = $color;
+    return $this;
+  }
+
+  public function resetColors() {
+    $this->_bg_color = NULL;
+    $this->_fg_color = NULL;
+    return $this;
   }
 
   //////////////////////////////////////////////////////////////////////////////
