@@ -127,7 +127,7 @@ class Shell implements \Andou\Shelltools\Outputprovider {
           }
         }
       } elseif (strpos($opt, '-') === 0) {
-        $this->_flags[] = array_merge($this->_flags, explode("", $opt));
+        $this->_flags = array_merge($this->_flags, str_split(substr($opt, 1)));
       }
     }
   }
