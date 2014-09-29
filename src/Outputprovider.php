@@ -55,6 +55,7 @@ interface Outputprovider {
    * Sets the output background color
    * 
    * @param \Andou\Shelltools\Shellcolor $color
+   * @return \Andou\Outputprovider
    */
   public function setBgColor(\Andou\Shelltools\Shellcolor $color);
 
@@ -62,6 +63,14 @@ interface Outputprovider {
    * Sets the output foreground color
    * 
    * @param \Andou\Shelltools\Shellcolor $color
+   * @return \Andou\Outputprovider
    */
   public function setFgColor(\Andou\Shelltools\Shellcolor $color);
+
+  /**
+   * Resets the output color
+   * 
+   * @return \Andou\Outputprovider
+   */
+  public function resetColors();
 }

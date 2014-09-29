@@ -68,6 +68,7 @@ class Shellcolor {
   const BG_LIGHT_GREY = '47';
 
   /**
+   * Class contructor
    * 
    * @param string $color
    */
@@ -75,12 +76,22 @@ class Shellcolor {
     $this->_color = $color;
   }
 
+  /**
+   * Returns the color
+   * 
+   * @return string
+   */
   public function getColor() {
     return $this->_color;
   }
 
+  /**
+   * Converts to string this object
+   * 
+   * @return string
+   */
   public function __toString() {
-    return $this->_color;
+    return $this->getColor();
   }
 
   /**

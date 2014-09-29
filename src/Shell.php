@@ -127,7 +127,7 @@ class Shell implements \Andou\Shelltools\Outputprovider {
           }
         }
       } elseif (strpos($opt, '-') === 0) {
-        $this->_flags[] = substr($opt, 1);
+        $this->_flags[] = array_merge($this->_flags, explode("", $opt));
       }
     }
   }
@@ -290,6 +290,11 @@ class Shell implements \Andou\Shelltools\Outputprovider {
     return $this;
   }
 
+  /**
+   * Resets the output color
+   * 
+   * @return \Andou\Shelltools\Shell
+   */
   public function resetColors() {
     $this->_bg_color = NULL;
     $this->_fg_color = NULL;
