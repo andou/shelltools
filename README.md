@@ -39,6 +39,13 @@ $shell = Andou\Shelltools\Shell::getInstance();
 if ($shell->isCli()):
   $shell->getOptions();
   $shell->getFlags();
+  
+  //sets foregrund color
+  $shell->setFgColor(Andou\Shelltools\Shellcolor::FG_BROWN());
+
+  //outputs and newline
+  $shell->ol("How are you?!");
+
 
   for ($index = 0; $index < 1000; $index++) {
     $shell->spinnerStep();
